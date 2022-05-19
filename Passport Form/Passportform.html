@@ -1,0 +1,1299 @@
+		<html>
+		<head>
+		<meta charset="utf8">
+		<meta name="viewport" content="width-device-width,initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>  
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>  
+		<script src="form.js" ></script>
+		<style>
+			#form{
+				/* margin-left:250px;
+				margin-right:250px; */
+				border-style:double;
+				background-color:white;
+			}
+			.div{
+				margin-left:10px;
+				margin-right:10px;
+				border:1;
+				border-radius:10px;
+				border-spacing:30px;
+				background-color:#dcdcdc;
+			}
+			body{
+				background-color:#dcdcdc;
+
+			}
+			.error{
+				margin-left:250px;
+				margin-right:250px;	
+			}
+			.input{
+				text-transform: uppercase;
+			}
+			.legend{
+					font-size:25px;
+					font-weight:bold;
+			}
+			.label{
+					font-size:17px;
+					font-weight:bold;
+			}
+			.input{
+					margin-left:10px; 
+			}
+			#table1{
+					margin-right:10px;
+			}
+			p{
+				margin-left:10px;
+				margin-right:10px;
+			}
+		</style>	
+			<title> Passport Form </title>
+		</head>
+		<body onload="date()">
+			<div class="container">
+			<div class="form-group">
+			<form action="sub.html" id="form" name="form">
+				<label style="float:right">File Number(For Office Use Only)</label><br><br>
+				<input style="float:right;text-transform: uppercase;" type="text" name="filename" id="filename"><br><br>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<h2 style="background-color:#dcdcdc" align="center"><u>GOVERMENT OF INDIA, MINISTRY OF EXTERNAL AFFAIRS</u></h2>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<h2 style="background-color:#dcdcdc" align="center"><u>PASSPORT APPLICATION FORM</u></h2>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<p style="text-align:justify">Please read the Passport Instruction Booklet carefully before filling the form.Fillthis form in CAPITAL LETTERS
+						using blue/black ink ball point pen only. Furnishing of incorrect information / suppression of information would
+						lead to rejection of the application an	d would attract penal provisions as prescribed under the Passport Act,
+						1967.Please produce your original document at the time of submission of the form.</p>
+					</div>
+				</div>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<legend class="legend">1.<u>Service required</u></legend><br>
+						</div>
+					</div>
+					<!-- <table id="table1" style="float:right;background-color:white" width=20 height=40 border="1">
+						<tr>
+							<td>Please paste your unsigned recent colour photograph with white background of size 4.5cm X 3.5cm. [Not needed for applicants submitting the application at Passport Seva Kendra]</td>
+						</tr>
+						<tr>
+							<td><input type="file" name="newfile" id="pfile"></td>
+						</tr>
+					</table> -->
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label class="label">1.1 Appplying</label>
+						</div>
+						<div class="col-md-3">
+							<input type="radio" id="Fcheck" name=2 value="Fresh Passport" onclick="Reason()">Fresh Passport
+						</div>
+						<div class="col-md-3">
+							<input type="radio" id="Rcheck" name=2 value="Re_issue of Passport" onclick="Reason()">Re_issue of Passport<br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">1.2 If re_issue,specify reason(s)</label><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input type="radio" id="1" name=1 value="validity Expired within 3 year/Due to expire" onclick="repersonal()">validity Expired within 3 year/Due to expire
+							</div>
+							<div class="col-md-6">
+								<input type="radio" id="disable2" name=1 value=" Exhaustion of Pages" onclick="repersonal()">Exhaustion of Pages
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input type="radio" id="disable3" name=1 value="validity Expiredmore than 3 y year ago" onclick="repersonal()">validity Expiredmore than 3 y year ago
+							</div>
+							<div class="col-md-6">
+								<input type="radio" id="disable4" name=1 value="Lost Passport" onclick="repersonal()"> Lost Passport
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input type="radio" id="disable5" name=1 value="change in Existing Personal Particulars" onclick="repersonal()">change in Existing Personal Particulars
+							</div>
+							<div class="col-md-6">
+								<input type="radio" id="disable6" name=1 value=" Damaged Passport" onclick="repersonal()">Damaged Passport
+							</div>
+					</div>
+					<div class="row align-items-center pt-4 pb-3">
+						<div class="col-md-12">
+							<label class="label">1.3 if change in existing personal particulars,specify reason(s)</label><br>
+						</div>
+					</div>
+					<!-- <label class="label">1.3 if change in existing personal particulars,specify reason(s)</label><br> -->
+					<!-- <table id="table1" style="float:right;background-color:white" width="30" height="10"  border="1">
+					<tr>
+						<td>Signature/ Left Hand Thumb Impression of Illiterate Applicant and Minors who cannot sign.
+					</td>
+					</tr>
+					<tr>
+						<td><input type="file" name="newfile" id="sfile"></td>
+					</tr>
+					</table> -->
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<input type="checkbox" id="disable7" name=name value="Appearance">Appearance
+							</div>
+							<div class="col-md-4">
+								<input type="checkbox" id="disable8" name=name value="Signature">Signature
+							</div>
+							<div class="col-md-4">
+								<input type="checkbox" id="disable9" name=name value="GiveName">Give Name
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<input type="checkbox" id="disable10" name=name value="Surname">Surname
+							</div>
+							<div class="col-md-4">
+								<input type="checkbox" id="disable11" name=name value="Date of Birth">Date of Birth
+							</div>
+							<div class="col-md-4">
+								<input type="checkbox" id="disable12" name=name value="Spouse Name"> Spouse Name
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<input type="checkbox" id="disable13" name=name  value="address">Address
+							</div>
+							<div class="col-md-4">
+								<input type="checkbox" id="disable14" Name=name value="Delete ECR">Delete ECR
+							</div>
+							<div class="col-md-4">
+								<input type="checkbox" id="disable15" name=name value="other,Please specify">Other, Please specify
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-9">
+							<input class="form-control" type="text" id="other" name=surname><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<label class="label">1.4 Type of Application</label>
+							</div>
+							<div class="col-md-3">
+								<input type="radio" id="3" name=3 Value="Normal">Normal
+							</div>
+							<div class="col-md-3">
+								<input type="radio" name=3 value="Tatkaal">Tatkaal
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<label class="label">1.5 Type of Passport Booklet<label>
+							</div>
+							<div class="col-md-3">
+								<input type="radio" id="4" name=4 value="36 pages">36 pages
+							</div>
+							<div class="col-md-3">
+								<input type="radio" name=4 value="60 pages">60 pages
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<label class="label">1.6 Validity Required<label>
+							</div>
+							<div class="col-md-3">
+								<input type="radio" id="5" name=5 value="410 years">10 Years
+							</div>
+							<div class="col-md-3">
+								<input type="radio" name=5 value="Up to age 18">Up to age 18
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label style="font-size:15px">(For minors between 15 and 18 years)</label>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label>Please paste your unsigned recent colour photograph with white background of size 4.5cm X 3.5cm. [Not needed for applicants submitting the application at Passport Seva Kendra]</label>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+							<input type="file" class="form-control" id="pfile"
+							  aria-describedby="inputGroupFileAddon01">
+						  </div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label>Signature/ Left Hand Thumb Impression of Illiterate Applicant and Minors who cannot sign.</label>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+							<input type="file" class="form-control" id="sfile"
+							  aria-describedby="inputGroupFileAddon01">
+						  </div>
+						</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">	
+							<legend class="legend" >2.<u> Applicant Details</u></legend><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">2.1 Applicant`s Given Name</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label>(Given Name means first name followed by middle name(if any)(Initials notallowed))<label><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+						<input class="form-control" type="text" name=Givenname id="givenname"><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label align="center">Surname</label><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" name=surname id="surname"><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-10">
+								<label>2.2 Are you knows by any other names(aliases)?</label>
+							</div>	
+							<div class="col-md-1">
+								<input type="radio" name=7 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=7 value="No">no
+							</div>
+					</div>
+						<div class="row align-items-center" style="font-size:15px">
+							<div class="col-md-12">If yes,provide details in Column 1 of Supplementary Form</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-10">
+								<label>2.3 Have you ever changed your name?</label>
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="8" name=8 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=8 value="No">No 
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12"><label>If yes,provide details in Column 2 of Supplementary Form</label></div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<label id="label">2.4 Date of Birth(DD-MM-YYYY)</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<input class="form-control" type="date" id="Bdate" name=dateofbirth ><br>
+							</div>
+						</div>
+						<div class="row align-items-center" style="float: right;">
+							<div class="col-md-3"><b>Your Country</b></div>
+							<div class="col-md-3"><input type="radio" id="India" name=y onclick="In()">India</div>
+							<div class="col-md-6"><input type="radio" id="out" name=y onclick="In()">Out of India</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label class="label">2.5 place Of Birth (Village or Town or City)</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text"  id="Bplace" name=Place><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label>District (If born in India)</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="District" name=District><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label>State/UT(If born in India)</label><br>
+							</div>
+						</div>	
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="State" name=State><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label>Region/Country(If born abroad)if born before 15/08/1947 in place now in Pakistan or Bangladesh,write"Undivided India"</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="Country" name=Region><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<label class="label">2.6 Gender </label>
+							</div>
+							<div class="col-md-3">
+								<input type="radio" id="9" name=9 value="Male">Male
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=9 value="Female" >Female
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=9 value="Transgender">Transgender
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<label class="label">2.7 Marital Status</label>
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="10" name=10 value="Single">Single
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=10 value="Married">Married
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=10 value="Divorced">Divorced
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=10 value="widows">widows/widower
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=10 value="separated">Separated
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<label class="label">2.8 Citizenship of India by</label>
+							</div>
+							<div class="col-md-2">
+								<input type="radio" id="11" name=11 value="Descent">Descent
+							</div>
+							<div class="col-md-3">
+								<input type="radio" name=11 value="Registration/Naturalization">Registration/Naturalization
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<label class="label">2.9 PAN (If available)</label>
+							</div>
+							<div class="col-md-3">
+								<label class="label">2.10 Voter ID (If available)</label>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<input class="form-control" type="text" id="pan" name=PAN>
+							</div>
+							<div class="col-md-3">
+								<input class="form-control" type="text" id="voter" name=Voter>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">	
+								<label class="label">2.11 Employment Type</label>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-1">
+								<input type="radio" id="12" name=12 value="PSU" onclick="gov()">PSU
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=12 value="Govemment" onclick="gov()">Govemment
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=12 value="Statutory Body" onclick="gov()">Statutory Body
+							</div>
+							<div class="col-md-4">
+								<input type="radio" name=12 value="RetiredGovernmentServant" onclick="nongov()">Retired Government Servant
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=12 value="Self Employed" onclick="nongov()">Self Employed
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-1">
+								<input type="radio" name=12 value="Private" onclick="nongov()">Private
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=12 value="Homemaker" onclick="nongov()">Homemaker
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=12 value="Not Employed" onclick="nongov()">Not Employed
+							</div>
+							<div class="col-md-4">
+								<input type="radio" name=12 value="Retired-Private Service" onclick="nongov()">Retired-Private Service
+							</div>
+							<div class="col-md-2">
+								<input type="radio" name=12 value="student" onclick="nongov()">Student
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-1">
+								<input type="radio" name=12 value="Other" onclick="nongov()">Other
+							</div>
+							<div class="col-md-10">
+								<input type="radio" name=12 value="Owners,Partners & Directors of companies which are members of CII,FICCI & ASSOCHAM" onclick="nongov()">Owners,Partners & Directors of companies which are members of CII,FICCI & ASSOCHAM
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label class="label">2.12 If employed in Govemment/Statutory Body/PSU,specify organization name</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="employed" name=employed><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-10">
+								<label class="label">2.13 Is either of your parent(in case of minor)/spouse,a government servant?</label>
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="13" name=13 value="Yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=13 value="No">No<br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label class="label">2.14 Educational Qualification<label>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<input type="radio" id="14" name=14 value="7th Pass or Less">7th Pass or Less
+							</div>
+							<div class="col-md-3">
+								<input type="radio" name=14 value="Between 8th and 9th Standard">Between 8th and 9th Standard
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-3">
+								<input type="radio" name=14 value="10th pass and above">10th pass and above
+							</div>
+							<div class="col-md-3">
+								<input type="radio" name=14 value="Graduate and above">Graduate and above
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-5">
+								<label class="label">2.15 Are you eligible for NON-ECR category?</label>
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="15" name=15 value="Yes">Yes
+							</div>
+							<div class="col-md-6">
+								<input type="radio" name=15 value="No">No For details,see Column 2.15, section B of Instrucion Booklet<br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label class="label">2.16 Visible Distinguishing Mark</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" name=Visible><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-12">
+								<label class="label">2.17 Aadhaar Number</label><br>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="adhar"><br>
+							</div>
+						</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<legend class="legend">3. <u>Family Details</u></legend><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label class="label">3.1 Father`s Given Name</label>
+						</div>
+						<div class="col-md-6">
+							<label class="label" align=center>Surname</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="fathername" name=Nmae>
+						</div>
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="fathersurname" name=surname>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label class="label">3.2 Mother`s Given Name</label>
+						</div>
+						<div class="col-md-6">
+							<label class="label" align=center>Surname</label>		
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="mothername" name=Nmae>
+						</div>
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="mothersurname" name=surname>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label class="label">3.3 Legal Guardian`s Name</label>
+						</div>
+						<div class="col-md-6">
+							<label class="label" align=center>Surname</label>	
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control type="text" id="guardianname" name=Nmae>
+						</div>
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="guardiansurname" name=surname>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label class="label">3.4 Spouse`s Given Name</label>
+						</div>
+						<div class="col-md-6">
+							<label class="label">Surname</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="spousename" name=Nmae>
+						</div>
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="spousesurname" name=surname>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+					<label class="label">3.5 If applicant is minor,provide following details Parent`s Passport Details (If passport has been applied for but not received,give Number)</label><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<label>Father/Legal Guardian`s File/Passport Number</label>
+							</div>
+							<div class="col-md-6">
+								<label>Father/Legal Guardian`s Nationality, If not Indian</label>
+							</div>
+					</div>	
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control type="text" id="fpassportnumber" name=Passportnumber>
+							</div>
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="fnationality" name=nationality>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<label>Mother/Legal Guardian`s File/Passport Number</label>
+							</div>
+							<div class="col-md-6">
+								<label>Mother/Legal Guardian`s Nationality, If not Indian</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="mpassportnumber" name=surname>
+							</div>
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="mnationality" name=surname>
+							</div>
+					</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<legend class="legend">4.<u>Present Residential Address Details(Where  applicant presently resides)</u></legend>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>4.1 House No.and Street Name</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="street" name=street>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>Village or Town or City<label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="city" name=City>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>District</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="district" name=District>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>Police Station</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="police" name=Policestation>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>State/UT</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="state" name=State>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>PIN</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="pin" name=PIN>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<label>Mobile Number</label>
+							</div>
+							<div class="col-md-6">
+								<label>Telephone Number</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="mnumber" name=Mobilenumber>
+							</div>
+							<div class="col-md-6">
+								<input class="form-control" type="text" name=telephonenumber>
+							</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<label>E-mail</label><br>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="mail" name=email>
+						</div>
+					</div>	
+					<div class="row align-items-center">
+							<div class="col-md-5">
+								<label class="label">4.2 Is permanent address same as present address?</label>
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="16" name=16 value="Yes" onclick="yes1()">Yes
+							</div>
+							<div class="col-md-6">
+								<input type="radio" id="no"name=16 value="No" onclick="yes1()">No If no,Provide details in Column 4 of Supplementary Form<br>
+							</div>	
+					</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<legend class="legend">5.<u> Emergency content Details</u></legend> 
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label>Name and Address (Mention address only if different from present residential address)</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" id="Ename" type="text" name=name>
+						</div>
+					</div>					
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<label>Mobile Number</label>
+							</div>
+							<div class="col-md-6">
+								<label>Telephone Number</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" id="Emobilenumber" type="text" name=Mobilenumber>
+							</div>
+							<div class="col-md-6">
+								<input class="form-control" id="tphone" type="text" name=telephonenumber>
+							</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label>E-mail</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" id="Eemail" type="text" name=email>
+						</div>
+					</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<legend class="legend">6.<u> Previous Passport/Application details</u></legend>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">6.1 Details of latest held/existing/lost/damaged Ordinary Passport/ Identity Certificate</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-4">
+								<label>Passport/Identity Certificate Number</label>
+							</div>
+							<div class="col-md-4">
+								<label>Date of Issue(DD-MM-YYYY)</label>
+							</div>
+							<div class="col-md-4">
+								<label>Date of Expiry (DD-MM-YYYY)</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-4">
+								<input class="form-control" type="text" id="pnumber" name=Number>
+							</div>
+							<div class="col-md-3">
+								<input class="form-control" type="date" id="issuedate" name=dateofissue>
+							</div>
+							<div class="col-md-3">
+								<input class="form-control" type="date" id="expirydate" name=dateofExpiry>
+							</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label>Place of issue</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6">
+							<input class="form-control" type="text" id="pissue" name=surname>
+					</div>
+					<!-- <div class="row align-items-center">
+						<div class="col-md-8">
+							<label class="label">6.2 Have you ever applied for passport,but not issued?<label>
+						</div>
+						<div class="col-md-2">
+							<input type="radio" id="17" name=17 value="yes" onclick="yes()">Yes
+						</div>
+						<div class="col-md-2">
+							<input type="radio" id="no17" name=17 value="NO" onclick="yes()">No
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label>If you have held/ hold any diplomatic/ official passport,provide details in Column 6 of Supplementary Form </label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-12">
+								<label>If yes,Provide the following details</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6"> 
+								<label>File Number</label>
+							</div>
+							<div class="col-md-6">
+								<label>Month and Year of applying</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="anumber" name=number>
+							</div>
+							<div class="col-md-4">
+								<input class="form-control" type="month" id="my" name=Monthandyear>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<label>Name of passport office where applied</label>
+							</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6">
+								<input class="form-control" type="text" id="poffice" name=passportoffice>
+							</div>
+					</div> -->
+					</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<legend class="legend">7. <u>Other details</u></legend>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">7.1 Provide the following details if there are any criminal proceedings pending against the applicant.</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.1.1</div>
+							<div class="col-md-8">Are any proceedings in respect of an offence alleged to have been committed by
+											you pending before a criminal court in India?
+											(If yes, fill Column 6.1 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="18" name=18 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=18 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.1.2</div>
+							<div class="col-md-8">Has any warrant or summons for your appearance been issued & pending before
+											a court under any law for the time being in force?
+											(If yes, fill Column 6.2 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="19" name=19 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=19 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.1.3</div>
+							<div class="col-md-8">Has a warrant for your arrest been issued by a court under any law for the time
+											being in force?
+											(If yes, fill Column 6.3 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="20" name=20 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=20 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.1.4</div>
+							<div class="col-md-8">Has an order prohibiting your departure from India been made by any court?
+											(If yes, fill Column 6.4 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="21" name=21 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=21 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">7.2 Provide the following details if the applicant has been convicted by a court in India.</label>
+						</div>
+					</div>	
+					<div class="row align-items-center">
+							<div class="col-md-1">7.2.1</div>
+							<div class="col-md-8">Have you, at any time during the period of five years immediately preceding the
+											date of	application, been convicted by a court in India for any offence
+											involving moral turpitude and sentenced in respect thereof to imprisonment for
+											not less than two years?
+											(If yes, fill Column 6.5 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="22" name=22 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=22 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">7.3 Provide the following details if the applicant has been refused/denied passport.<label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.3.1</div>
+							<div class="col-md-8">Have you ever been refused/denied passport?
+											(If yes, fill Column 6.6 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="23" name=23 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=23 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.3.2</div>
+							<div class="col-md-8">Has your passport ever been impounded?
+											(If yes, fill Column 6.7 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="24" name=24 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=24 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.3.3</div>
+							<div class="col-md-8">Has your passport ever been revoked?
+											(If yes, fill Column 6.8 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="25" name=25 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=25 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">7.4 Provide the following details if applicant has applied for or been granted foreign citizenship</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.4.1</div>
+							<div class="col-md-8">Have you ever been granted citizenship by any other region/country?
+											(If yes, fill Column 6.9 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="26" name=26 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=26 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.4.2</div>
+							<div class="col-md-8">Have you ever held the passport of any other region/country at any time?
+											(If yes, fill Column 6.10 of Supplementary Form)
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="27" name=27 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=27 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.4.3</div>
+							<div class="col-md-8">Have you ever surrendered your Indian passport?
+											(If yes, fill Column 6.11 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="28" name=28 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=28 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.4.4</div>
+							<div class="col-md-8">Have you ever applied for renunciation of Indian citizenship?
+											(If yes, fill Column 6.12 of Supplementary Form)</div>
+							<div class="col-md-1">
+								<input type="radio" id="29" name=29 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=29 value="No">No 
+							</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<label class="label">7.5 Provide the following details if applicant has returned to India on Emergency Certificate.</label>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.5.1</div>
+							<div class="col-md-8">Have you ever returned to India on Emergency Certificate (EC)?
+											(If yes, fill Column 6.13 of Supplementary Form)
+							</div>
+							<div class="col-md-1">
+								<input type="radio" id="30" name=30 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=30 value="No">No 
+							</div> 
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.5.2</div>
+							<div class="col-md-8">Have you ever been deported from any country?
+											(If yes, was the cost borne by the Government of India and if so, has the
+											same been refunded?)</div>
+							<div class="col-md-1">
+								<input type="radio" id="31" name=31 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=31 value="No">No 
+							</div> 
+						</div>
+					<div class="row align-items-center">
+							<div class="col-md-1">7.5.3</div>
+							<div class="col-md-8">Have you ever been repatriated from any country back to India?
+											(If yes, was the cost borne by the Government of India and if so, has the
+											same been refunded?)</div>
+							<div class="col-md-1">
+								<input type="radio" id="32" name=32 value="yes">Yes
+							</div>
+							<div class="col-md-1">
+								<input type="radio" name=32 value="No">No 
+							</div> 
+					</div>
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<legend class="legend">8.<u>Free Details (Not to be filled by applicants submitting the application at Passport Seva Kendra)</u></legend>
+						</div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-12"><label class="label">8.1 Fee Amount in (Rs)</label></div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-6"><input class="form-control" type="text" id="fee" name=fee></div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-12"><label class="label">8.2 If paid by Demand Draft(DD),provide the following details</label></div>
+					</div>
+					<div class="row align-items-center">
+							<div class="col-md-4">DD Number</div>					
+							<div class="col-md-4">DD Issue Date</div>
+							<div class="col-md-4">DD Expiry Date</div>	
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-4"><input class="form-control" type="text" id="ddnumber" name=Number ></div>
+						<div class="col-md-4"><input class="form-control" type="date" id="ddissue" name=IssueDate></div>
+						<div class="col-md-4"><input class="form-control" type="date" id="ddexpiry" name=ExpiryDate></div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6"><label>Bank Name</label></div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6"><input class="form-control" type="text" id="bankname" name=bankname></div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6"><label>Branch Name</label></div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-6"><input class="form-control" type="text" id="branchname" name=branchname></div>
+					</div>	
+				</div><br>
+				<div class="div">
+					<legend class="legend">9. <u>Enclosured</u></legend><br>
+					<input type="file" id="enclosured" name="files">
+				</div><br>
+				<div class="div">
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<legend class="legend">10. <u>Self Declaration</u></legend>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<p style="text-align:justify">I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired citizenship or
+								travel document of any other country. I have not lost, surrendered or been deprived of the citizenship of India.
+								I have not contravened any of the conditions relating to the possession and use of an Indian passport.</p>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<p style="text-align:justify">I affirm that the information and particulars given by me in this form are true and correct. I further state that I
+								am not suppressing any material information in this regard. I further affirm that the enclosures and documentary
+								proof submitted in support of my application for an Indian passport are authentic and solely pertain to me and
+								I am fully responsible for the accuracy of the same. I am liable to be penalized or prosecuted if found otherwise.
+								I am aware that under the Passports Act, 1967 it is a criminal offence to furnish any false information or to
+								suppress any material information with a view to obtaining passport or travel document.</p>
+						</div>
+					</div>
+					<div class="row align-items-center">
+						<div class="col-md-12">
+							<p style="text-align:justify">I have read and understood the contents of the above and by submitting this form certify that all the information
+								submitted by me in the form is bonafide.</p>
+						</div>
+					</div>
+					<!-- <table class="table1" style="float:right;background-color:white" width="30" height="10"  border="1">
+					<tr>
+						<td>Signature/ Left Hand Thumb Impression of Applicant (If applicant is minor, either parent to sign)
+					</td>
+					</tr>
+					<tr>
+						<td><input type="file" id="sign" name="newfile"></td>
+					</tr> 
+				</table> -->
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<label class="label">Place</label>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<input class="input" type="text" id="place" name=Place>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<label class="label">Date(DD-MM-YYYY)<label>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<input type="text" id="Date" name=date disabled>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-12">
+						<label>Signature/ Left Hand Thumb Impression of Applicant (If applicant is minor, either parent to sign)</label>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6">
+					<input type="file" class="form-control" id="sign"
+					  aria-describedby="inputGroupFileAddon01">
+				  </div>
+				</div>
+				</div>
+				<div class="align-items-center py-4">
+					<input type="submit" class="btn btn-primary btn-lg" value="Submit">
+					<input  type="reset" class="btn btn-primary btn-lg" value="Reset">
+				  </div>
+			</form>
+			</div></div>
+			<small class="error" id="e_filename"></small>
+			<small class="error" id="e_Fname"></small>
+			<small class="error" id="e_1"></small>
+			<small class="error" id="e_name"></small>
+			<small class="error" id="e_3"></small>
+			<small class="error" id="e_4"></small>
+			<small class="error" id="e_5"></small>	
+			<small class="error" id="e_pfile"></small>
+			<small class="error" id="e_sfile"></small>
+			<small class="error" id="e_givenname"></small>
+			<small class="error" id="e_surname"></small>
+			<small class="error" id="e_8"></small>
+			<small class="error" id="e_Bdate"></small>
+			<small class="error" id="e_Bplace"></small>
+			<small class="error" id="e_District"></small>
+			<small class="error" id="e_State"></small>
+			<small class="error" id="e_Country"></small>
+			<small class="error" id="e_9"></small>
+			<small class="error" id="e_10"></small>
+			<small class="error" id="e_11"></small>
+			<small class="error" id="e_12"></small>
+			<small class="error" id="e_13"></small>
+			<small class="error" id="e_14"></small>
+			<small class="error" id="e_15"></small>
+			<small class="error" id="e_employed"></small>
+			<small class="error" id="e_adhar"></small>
+			<small class="error" id="e_fathername"></small>	
+			<small class="error" id="e_fathersurname"></small>	
+			<small class="error" id="e_mothername"></small>	
+			<small class="error" id="e_mothersurname"></small>	
+			<small class="error" id="e_guardianname"></small>	
+			<small class="error" id="e_guardiansurname"></small>	
+			<small class="error" id="e_spousename"></small>	
+			<small class="error" id="e_spousesurname"></small>
+			<small class="error" id="e_fpassportnumber"></small>
+			<small class="error" id="e_fnationality"></small>
+			<small class="error" id="e_mpassportnumber"></small>
+			<small class="error" id="e_mnationality"></small>
+			<small class="error" id="e_street"></small>
+			<small class="error" id="e_city"></small>
+			<small class="error" id="e_district"></small>
+			<small class="error" id="e_police"></small>
+			<small class="error" id="e_state"></small>
+			<small class="error" id="e_pin"></small>
+			<small class="error" id="e_mnumber"></small>
+			<small class="error" id="e_mail"></small>
+			<small class="error" id="e_16"></small>
+			<small class="error" id="e_Ename"></small>
+			<small class="error" id="e_Emobilenumber"></small>
+			<small class="error" id="e_Eemail"></small>
+			<small class="error" id="e_pnumber"></small>
+			<small class="error" id="e_issuedate"></small>
+			<small class="error" id="e_expirydate"></small>
+			<small class="error" id="e_pissue"></small>
+			<small class="error" id="e_17"></small>
+			<small class="error" id="e_anumber"></small>
+			<small class="error" id="e_my"></small>
+			<small class="error" id="e_poffice"></small>
+			<small class="error" id="e_18"></small>
+			<small class="error" id="e_19"></small>
+			<small class="error" id="e_20"></small>
+			<small class="error" id="e_21"></small>
+			<small class="error" id="e_22"></small>
+			<small class="error" id="e_23"></small>
+			<small class="error" id="e_24"></small>
+			<small class="error" id="e_25"></small>
+			<small class="error" id="e_26"></small>
+			<small class="error" id="e_27"></small>
+			<small class="error" id="e_28"></small>
+			<small class="error" id="e_29"></small>
+			<small class="error" id="e_30"></small>
+			<small class="error" id="e_31"></small>
+			<small class="error" id="e_32"></small>
+			<small class="error" id="e_fee"></small>
+			<small class="error" id="e_ddnumber"></small>
+			<small class="error" id="e_ddissue"></small>
+			<small class="error" id="e_ddexpiry"></small>
+			<small class="error" id="e_bankname"></small>
+			<small class="error" id="e_branchname"></small>
+			<small class="error" id="e_place"></small>
+			<small class="error" id="e_Date"></small>
+			<small class="error" id="e_sign"></small>
+		</body>
+
+	</html>
